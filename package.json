@@ -1,6 +1,6 @@
 {
   "name": "react-99",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
@@ -11,14 +11,11 @@
     "server": "webpack-dev-server"
   },
   "keywords": [
-    "BuckleScript"
+    "BuckleScript", "Reason", "ReasonML"
   ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "bs-css": "^9.0.1",
-    "firacode": "^1.206.0",
-    "prismjs": "^1.17.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "reason-react": ">=0.7.0"
@@ -31,8 +28,9 @@
     "bs-platform": "^5.0.6",
     "css-loader": "^3.1.0",
     "file-loader": "^4.1.0",
-    "gentype": "^2.32.0",
+    "firacode": "^1.206.0",
     "html-webpack-plugin": "^3.2.0",
+    "prismjs": "^1.17.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.0.1",
     "webpack-cli": "^3.1.1",

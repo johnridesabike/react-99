@@ -1,28 +1,25 @@
 open Belt;
 open ReactDOMRe;
 
-/*
-   This uses bs-css which in turn uses emotion. Is there any easy way to
-   use keyframes without that overhead?
- */
+[%%raw{|var blinkCss =
+  "@keyframes react_99_epic_blink {"
+  + "0% {visibility: hidden;}"
+  + "50% {visibility: hidden;}"
+  + "100% {visibility: visible;}}";
+var style = document.createElement('style');
+document.head.appendChild(style);
+style.type = 'text/css';
+style.appendChild(document.createTextNode(blinkCss))|}];
 module BLINK = {
-  let blinkStyle =
-    Css.style([
-      Css.animation(
-        ~duration=2000,
-        ~timingFunction=`linear,
-        ~iterationCount=`infinite,
-        Css.keyframes([
-          (0, [Css.visibility(`hidden)]),
-          (50, [Css.visibility(`hidden)]),
-          (100, [Css.visibility(`visible)]),
-        ]),
-      ),
-    ]);
-
   [@react.component]
   let make = (~children) => {
-    <div className=blinkStyle> children </div>;
+    <div
+      style={Style.make(
+        ~animation="2s linear infinite react_99_epic_blink",
+        (),
+      )}>
+      children
+    </div>;
   };
 };
 

@@ -1,5 +1,4 @@
 module BLINK: {
-  let blinkStyle: string;
   [@bs.obj]
   external makeProps:
     (~children: 'children, ~key: string=?, unit) => {. "children": 'children} =

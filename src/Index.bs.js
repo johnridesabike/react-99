@@ -12,7 +12,7 @@ import "firacode/distr/fira_code.css"
 
 function Index$SuperCoolHeader(Props) {
   return React.createElement(React99$React99.CENTER[/* make */0], {
-              children: React.createElement(React99$React99.BLINK[/* make */1], {
+              children: React.createElement(React99$React99.BLINK[/* make */0], {
                     children: React.createElement(React99$React99.FONT[/* make */0], {
                           color: "red",
                           size: "7",
