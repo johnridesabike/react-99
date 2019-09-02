@@ -1,9 +1,19 @@
-# ![React-99](src/example/header.png)
+# ![React '99](src/example/header.png)
+
+React '99 is a library of (Reason)React elements that simulate depreciated
+HTML elements. Currently it includes:
+
+- \<CENTER>
+- \<BLINK>
+- \<FONT>
+and
+- \<BASEFONT>, which provides context with defaults for \<FONT>
+
+[See the docs for usage](https://johnridesa.bike/react-99/).
 
 ## Why?
 
-On a whim, I thought it would be fun to recreate the depreciated HTML features
-of the 90s. Naturally, this project went way further than it deserved.
+On a whim, I thought it would be funny to recreate 90s HTML with React. Naturally, this project went way further than it deserved.
 
 ## Reason & JavaScript
 

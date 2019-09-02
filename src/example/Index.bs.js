@@ -32,7 +32,7 @@ var SuperCoolHeader = /* module */[/* make */Index$SuperCoolHeader];
 
 function Index$MindBlowingEffect(Props) {
   return React.createElement(BASEFONT$React99.make, {
-              color: "green",
+              color: "aqua",
               face: "comic sans ms",
               size: 5,
               children: React.createElement(CENTER$React99.make, {

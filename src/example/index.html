@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
   <meta charset="UTF-8">
-  <title>ReasonReact Examples</title>
+  <title>React '99</title>
   <script>
     function displayReason(isReason) {
       if (isReason) {
@@ -26,23 +26,25 @@
     <a href="https://reasonml.github.io/reason-react/">React 2077</a> to invoke
     the HTML of 1999.
   </p>
-  <h2>Installation</h2>
-  <p><code>npm install [update later]</code></p>
-  <section>
-    <h1>Examples</h1>
-    <p><small>Choose your language:</small></p>
-    <button onclick="displayReason(true)" class="reason-button">
-      <img src="reason.png" alt="Reason" class="reason-button__img">
-    </button>
-    <button onclick="displayReason(false)" class="javascript-button">
-      <img src="javascript.png" alt="JavaScript" class="javascript-button__img">
-    </button>
-    <p>
-      Tired of modern styling code? Miss setting font size with
-      &lt;FONT&gt;? How about ye olde &lt;BLINK&gt; tag?
-    </p>
-    <div id="reasonExample1"></div>
-    <pre><code class="language-reason">module SuperCoolHeader = {
+  <main>
+    <h2>Installation</h2>
+    <p>Run this command:</p>
+    <pre><code class="language-sh">npm i react-99</code></pre>
+    <section>
+      <h1>Example code</h1>
+      <p><small>Choose your language:</small></p>
+      <button onclick="displayReason(true)" class="reason-button">
+        <img src="reason.png" alt="Reason" class="reason-button__img">
+      </button>
+      <button onclick="displayReason(false)" class="javascript-button">
+        <img src="javascript.png" alt="JavaScript" class="javascript-button__img">
+      </button>
+      <p>
+        Tired of modern styling code? Miss setting font size with
+        &lt;FONT&gt;? How about ye olde &lt;BLINK&gt; tag?
+      </p>
+      <div id="reasonExample1"></div>
+      <pre><code class="language-reason">module SuperCoolHeader = {
   [@react.component]
   let make = () =&gt; {
     &lt;CENTER&gt;
@@ -54,7 +56,7 @@
     &lt;/CENTER&gt;;
   };
 };</code></pre>
-    <pre><code class="language-javascript">const SuperCoolHeader = () =&gt;
+      <pre><code class="language-javascript">const SuperCoolHeader = () =&gt;
   &lt;CENTER&gt;
     &lt;BLINK&gt;
       &lt;FONT color=&quot;red&quot; size=&quot;7&quot;&gt;
@@ -62,15 +64,15 @@
       &lt;/FONT&gt;
     &lt;/BLINK&gt;
   &lt;/CENTER&gt;;</code></pre>
-    <p>
-      &lt;BASEFONT&gt; can be used to set the default font size inherited by
-      children &lt;FONT&gt; tags.
-    </p>
-    <div id="reasonExample2"></div>
-    <pre><code class="language-reason">module MindBlowingEffect = {
+      <p>
+        &lt;BASEFONT&gt; can be used to set the default font size inherited by
+        children &lt;FONT&gt; tags.
+      </p>
+      <div id="reasonExample2"></div>
+      <pre><code class="language-reason">module MindBlowingEffect = {
   [@react.component]
   let make = () =&gt; {
-    &lt;BASEFONT color=&quot;green&quot; size=5 face=&quot;comic sans ms&quot;&gt;
+    &lt;BASEFONT color=&quot;aqua&quot; size=5 face=&quot;comic sans ms&quot;&gt;
       &lt;CENTER&gt;
         &lt;marquee&gt;
           {React.string(&quot;And welcome to the &quot;)}
@@ -80,95 +82,96 @@
     &lt;/BASEFONT&gt;;
   };
 };</code></pre>
-    <pre><code class="language-javascript">const MindBlowingEffect = () =&gt;
-  &lt;BASEFONT color=&quot;green&quot; size={5} face=&quot;comic sans ms&quot;&gt;
+      <pre><code class="language-javascript">const MindBlowingEffect = () =&gt;
+  &lt;BASEFONT color=&quot;aqua&quot; size={5} face=&quot;comic sans ms&quot;&gt;
     &lt;CENTER&gt;
       &lt;marquee&gt;
         And welcome to the &lt;FONT size=&quot;+1&quot;&gt;Jam.&lt;/FONT&gt;
       &lt;/marquee&gt;
     &lt;/CENTER&gt;
   &lt;/BASEFONT&gt;;</code></pre>
-  </section>
-  <section>
-    <h1>API</h1>
-    <h2><code>&lt;CENTER&gt;</code></h2>
-    <p>Centers the text of the children.</p>
-    <h2><code>&lt;BLINK&gt;</code></h2>
-    <p>Gives the text a "blink" effect.</p>
-    <h2><code>&lt;BASEFONT&gt;</code></h2>
-    <p>
-      Sets the default font for its children. The <code>size</code> prop can be
-      an integer from 1 to 7.
-    </p>
-    <table>
-      <thead>
-        <tr>
-          <th>Prop</th>
-          <th>Type</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>children</td>
-          <td>reactElement</td>
-        </tr>
-        <tr>
-          <td>color</td>
-          <td>option(string)</td>
-        </tr>
-        <tr>
-          <td>face</td>
-          <td>option(string)</td>
-        </tr>
-        <tr>
-          <td>size</td>
-          <td>option(int)</td>
-        </tr>
-      </tbody>
-    </table>
-    <h2><code>&lt;FONT&gt;</code></h2>
-    <p>
-      Sets the font for its children. The <code>size</code> prop can be a
-      <em>string</em> of an integer, or it can begin with a "+" or a "-" to
-      subtract the number from the <code>BASEFONT</code> defaults.
-    </p>
-    <table>
-      <thead>
-        <tr>
-          <th>Prop</th>
-          <th>Type</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>children</td>
-          <td>reactElement</td>
-        </tr>
-        <tr>
-          <td>color</td>
-          <td>option(string)</td>
-        </tr>
-        <tr>
-          <td>face</td>
-          <td>option(string)</td>
-        </tr>
-        <tr>
-          <td>size</td>
-          <td>option(string)</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-  <section>
-    <h1>Notes</h1>
-    <p>
-      React '99 is made with ReasonReact, but it's usable by regular ReactJS.
-      It requires the <code>bs-platform</code> and <code>reason-react</code>
-      modules, which it lists as peer dependencies. You'll need to install those
-      too to use it.
-    </p>
-    <p>The default font size is 3, which is equivilant to 16px.</p>
-  </section>
+    </section>
+    <section>
+      <h1>API reference</h1>
+      <h2><code>&lt;CENTER&gt;</code></h2>
+      <p>Centers the text of its children.</p>
+      <h2><code>&lt;BLINK&gt;</code></h2>
+      <p>Gives the text a "blink" effect.</p>
+      <h2><code>&lt;BASEFONT&gt;</code></h2>
+      <p>
+        Sets the default font for its children. The <code>size</code> prop can
+        be an integer from 1 to 7.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Prop</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>children</td>
+            <td>reactElement</td>
+          </tr>
+          <tr>
+            <td>color</td>
+            <td>option(string)</td>
+          </tr>
+          <tr>
+            <td>face</td>
+            <td>option(string)</td>
+          </tr>
+          <tr>
+            <td>size</td>
+            <td>option(int)</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2><code>&lt;FONT&gt;</code></h2>
+      <p>
+        Sets the font for its children. The <code>size</code> prop can be a
+        <em>string</em> of an integer, or it can begin with a "+" or a "-" to
+        subtract the number from the <code>BASEFONT</code> defaults.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Prop</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>children</td>
+            <td>reactElement</td>
+          </tr>
+          <tr>
+            <td>color</td>
+            <td>option(string)</td>
+          </tr>
+          <tr>
+            <td>face</td>
+            <td>option(string)</td>
+          </tr>
+          <tr>
+            <td>size</td>
+            <td>option(string)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h1>Notes</h1>
+      <p>
+        React '99 is made with ReasonReact, but it's usable by regular ReactJS.
+        It requires the <code>bs-platform</code> and <code>reason-react</code>
+        modules, which it lists as peer dependencies. You'll need to install
+        those too to use it.
+      </p>
+      <p>The default font size is 3, which is equivilant to 16px.</p>
+    </section>
+  </main>
   <footer>
     <a href="https://github.com/johnridesabike/react-99">
       <img src="open_source.gif" alt="open source">

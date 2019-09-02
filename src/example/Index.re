@@ -19,7 +19,7 @@ module SuperCoolHeader = {
 module MindBlowingEffect = {
   [@react.component]
   let make = () => {
-    <BASEFONT color="green" size=5 face="comic sans ms">
+    <BASEFONT color="aqua" size=5 face="comic sans ms">
       <CENTER>
         <marquee>
           {React.string("And welcome to the ")}

@@ -1,6 +1,6 @@
 {
   "name": "react-99",
-  "version": "1.0.0-beta1",
+  "version": "1.0.0-beta2",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
