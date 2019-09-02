@@ -30,12 +30,17 @@
   <p><code>npm install [update later]</code></p>
   <section>
     <h1>Examples</h1>
+    <p><small>Choose your language:</small></p>
     <button onclick="displayReason(true)" class="reason-button">
       <img src="reason.png" alt="Reason" class="reason-button__img">
     </button>
     <button onclick="displayReason(false)" class="javascript-button">
       <img src="javascript.png" alt="JavaScript" class="javascript-button__img">
     </button>
+    <p>
+      Tired of modern styling code? Miss setting font size with
+      &lt;FONT&gt;? How about ye olde &lt;BLINK&gt; tag?
+    </p>
     <div id="reasonExample1"></div>
     <pre><code class="language-reason">module SuperCoolHeader = {
   [@react.component]
@@ -57,6 +62,10 @@
       &lt;/FONT&gt;
     &lt;/BLINK&gt;
   &lt;/CENTER&gt;;</code></pre>
+    <p>
+      &lt;BASEFONT&gt; can be used to set the default font size inherited by
+      children &lt;FONT&gt; tags.
+    </p>
     <div id="reasonExample2"></div>
     <pre><code class="language-reason">module MindBlowingEffect = {
   [@react.component]
@@ -161,7 +170,9 @@
     <p>The default font size is 3, which is equivilant to 16px.</p>
   </section>
   <footer>
-    <img src="open_source.gif" alt="open source">
+    <a href="https://github.com/johnridesabike/react-99">
+      <img src="open_source.gif" alt="open source">
+    </a>
     <script src="index.js"></script>
   </footer>
 </body>
