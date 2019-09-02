@@ -1,0 +1,99 @@
+body {
+  text-align: center;
+  background-image: url("./background.jpeg");
+  color:azure;
+  font-family: 
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 20px;
+}
+
+a,
+a:visited {
+  color: skyblue;
+}
+
+a:hover,
+a:visited:hover {
+  color: plum;
+}
+
+table {
+  margin: auto;
+}
+th, td {
+  border: 1px solid aquamarine;
+  padding: 6px 12px;
+}
+
+section {
+  width: 640px;
+  margin: auto;
+}
+
+code,
+pre {
+  font-family:
+    "Fira Code",
+    Menlo,
+    Monaco,
+    Consolas,
+    "Andale Mono",
+    "DejaVu Sans Mono",
+    "Courier 10 Pitch",
+    Courier,
+    monospace;
+}
+
+code[class*="language-"][class*="language-"],
+pre[class*="language-"][class*="language-"] {
+  font-size: 16px;
+  font-family:
+    "Fira Code",
+    Menlo,
+    Monaco,
+    Consolas,
+    "Andale Mono",
+    "DejaVu Sans Mono",
+    "Courier 10 Pitch",
+    Courier,
+    monospace;
+}
+
+.show-reason .language-javascript {
+  display: none;
+}
+
+.show-javascript .language-reason {
+  display: none;
+}
+
+.show-reason .javascript-button {
+  filter: grayscale(100%)
+}
+
+.show-reason .javascript-button:hover {
+  filter: grayscale(50%)
+}
+
+.show-javascript .reason-button {
+  filter: grayscale(100%)
+}
+
+.show-javascript .reason-button:hover {
+  filter: grayscale(50%)
+}
+
+.reason-button,
+.javascript-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

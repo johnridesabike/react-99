@@ -1,9 +1,8 @@
-import * as React99BS from './React99.bs';
-
-export const BLINK = React99BS.BLINK[0];
-
-export const CENTER = React99BS.CENTER[0];
-
-export const BASEFONT = React99BS.BASEFONT[2];
-
-export const FONT = React99BS.FONT[0];
+import * as REBLINK from "./BLINK.bs";
+import * as RECENTER from "./CENTER.bs";
+import * as REBASEFONT from "./BASEFONT.bs";
+import * as REFONT from "./FONT.bs";
+export const BLINK = REBLINK.make;
+export const CENTER = RECENTER.make;
+export const BASEFONT = REBASEFONT.make;
+export const FONT = REFONT.make;

@@ -2,7 +2,10 @@
 
 import * as React from "react";
 import * as ReactDOMRe from "reason-react/src/ReactDOMRe.js";
-import * as React99$React99 from "./React99.bs.js";
+import * as FONT$React99 from "../FONT.bs.js";
+import * as BLINK$React99 from "../BLINK.bs.js";
+import * as CENTER$React99 from "../CENTER.bs.js";
+import * as BASEFONT$React99 from "../BASEFONT.bs.js";
 
 import "prismjs"
 ;
@@ -10,10 +13,13 @@ import "prismjs"
 import "firacode/distr/fira_code.css"
 ;
 
+import "./index.css"
+;
+
 function Index$SuperCoolHeader(Props) {
-  return React.createElement(React99$React99.CENTER[/* make */0], {
-              children: React.createElement(React99$React99.BLINK[/* make */0], {
-                    children: React.createElement(React99$React99.FONT[/* make */0], {
+  return React.createElement(CENTER$React99.make, {
+              children: React.createElement(BLINK$React99.make, {
+                    children: React.createElement(FONT$React99.make, {
                           color: "red",
                           size: "7",
                           children: "Get up and slam!"
@@ -25,12 +31,12 @@ function Index$SuperCoolHeader(Props) {
 var SuperCoolHeader = /* module */[/* make */Index$SuperCoolHeader];
 
 function Index$MindBlowingEffect(Props) {
-  return React.createElement(React99$React99.BASEFONT[/* make */3], {
+  return React.createElement(BASEFONT$React99.make, {
               color: "green",
               face: "comic sans ms",
               size: 5,
-              children: React.createElement(React99$React99.CENTER[/* make */0], {
-                    children: React.createElement("marquee", undefined, "And welcome to the ", React.createElement(React99$React99.FONT[/* make */0], {
+              children: React.createElement(CENTER$React99.make, {
+                    children: React.createElement("marquee", undefined, "And welcome to the ", React.createElement(FONT$React99.make, {
                               size: "+1",
                               children: "Jam."
                             }))
@@ -40,9 +46,9 @@ function Index$MindBlowingEffect(Props) {
 
 var MindBlowingEffect = /* module */[/* make */Index$MindBlowingEffect];
 
-ReactDOMRe.renderToElementWithId(React.createElement(Index$SuperCoolHeader, { }), "index1");
+ReactDOMRe.renderToElementWithId(React.createElement(Index$SuperCoolHeader, { }), "reasonExample1");
 
-ReactDOMRe.renderToElementWithId(React.createElement(Index$MindBlowingEffect, { }), "index2");
+ReactDOMRe.renderToElementWithId(React.createElement(Index$MindBlowingEffect, { }), "reasonExample2");
 
 export {
   SuperCoolHeader ,

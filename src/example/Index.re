@@ -1,6 +1,9 @@
-[%%raw {|import "prismjs"|}];
-[%%raw {|import "firacode/distr/fira_code.css"|}];
-open React99;
+%raw
+{|import "prismjs"|};
+%raw
+{|import "firacode/distr/fira_code.css"|};
+%raw
+{|import "./index.css"|};
 
 module SuperCoolHeader = {
   [@react.component]
@@ -27,6 +30,6 @@ module MindBlowingEffect = {
   };
 };
 
-ReactDOMRe.renderToElementWithId(<SuperCoolHeader />, "index1");
+ReactDOMRe.renderToElementWithId(<SuperCoolHeader />, "reasonExample1");
 
-ReactDOMRe.renderToElementWithId(<MindBlowingEffect />, "index2");
+ReactDOMRe.renderToElementWithId(<MindBlowingEffect />, "reasonExample2");
