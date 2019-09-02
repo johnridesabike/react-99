@@ -1,6 +1,6 @@
 {
   "name": "react-99",
-  "version": "1.0.0-beta2",
+  "version": "1.0.0",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
@@ -18,13 +18,22 @@
     "React",
     "ReasonReact"
   ],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "reason-react": "^0.7.0"
+  "author": {
+    "name": "John Jackson",
+    "email": "johnbicyclejackson@icloud.com",
+    "url": "https://johnridesa.bike/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnridesabike/react-99"
+  },
+  "homepage": "https://johnridesa.bike/react-99/",
+  "bugs": {
+    "url": "https://github.com/johnridesabike/react-99/issues",
+    "email": "johnbicyclejackson@icloud.com"
+  },
+  "license": "MIT",
+  "dependencies": {},
   "peerDependencies": {
     "bs-platform": "^5.0.6",
     "react": "^16.9.0",
@@ -32,6 +41,9 @@
     "reason-react": "^0.7.0"
   },
   "devDependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "reason-react": "^0.7.0",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",

@@ -8,7 +8,9 @@
       {
         "languages": [
           "reason",
-          "jsx"
+          "jsx",
+          "json",
+          "shell-session"
         ],
         "plugins": [
           "line-numbers"

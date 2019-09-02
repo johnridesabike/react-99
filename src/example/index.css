@@ -1,6 +1,7 @@
 body {
   text-align: center;
-  background-image: url("./background.jpeg");
+  background-image: url("./background.gif");
+  background-attachment: fixed;
   color:azure;
   font-family: 
     -apple-system,
@@ -33,9 +34,19 @@ th, td {
   padding: 6px 12px;
 }
 
-main {
+header {
+  font-size: 24px;
+}
+
+section {
   width: 640px;
-  margin: auto;
+  margin: 12px auto;
+  padding: 2px 0;
+  background-color: #012;
+}
+
+section p {
+  margin: 20px 6px;
 }
 
 code,
@@ -96,4 +107,8 @@ pre[class*="language-"][class*="language-"] {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.copyright {
+  font-size: 16px;
 }
