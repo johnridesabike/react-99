@@ -7,18 +7,17 @@
 
 module SuperCoolHeader = {
   [@react.component]
-  let make = () => {
+  let make = () =>
     <CENTER>
       <BLINK>
         <FONT color="red" size="7"> {React.string("Get up and slam!")} </FONT>
       </BLINK>
     </CENTER>;
-  };
 };
 
 module MindBlowingEffect = {
   [@react.component]
-  let make = () => {
+  let make = () =>
     <BASEFONT color="aqua" size=5 face="comic sans ms">
       <CENTER>
         <marquee>
@@ -27,7 +26,6 @@ module MindBlowingEffect = {
         </marquee>
       </CENTER>
     </BASEFONT>;
-  };
 };
 
 ReactDOMRe.renderToElementWithId(<SuperCoolHeader />, "reasonExample1");
