@@ -1,7 +1,7 @@
 %raw
 {|import "prismjs"|};
 %raw
-{|import "firacode/distr/fira_code.css"|};
+{|import "firacode"|};
 %raw
 {|import "./index.css"|};
 
