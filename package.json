@@ -1,6 +1,6 @@
 {
   "name": "react-99",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
@@ -35,30 +35,30 @@
   "license": "MIT",
   "dependencies": {},
   "peerDependencies": {
-    "bs-platform": "^5.0.6",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "bs-platform": "^7.0.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "reason-react": "^0.7.0"
   },
   "devDependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "reason-react": "^0.7.0",
-    "@babel/core": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
     "babel-loader": "^8.0.6",
     "babel-plugin-prismjs": "^1.1.1",
-    "bs-platform": "^5.0.6",
-    "css-loader": "^3.2.0",
-    "file-loader": "^4.2.0",
+    "bs-platform": "^7.0.1",
+    "css-loader": "^3.3.0",
+    "file-loader": "^5.0.2",
     "firacode": "^2.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "prismjs": "^1.17.1",
-    "style-loader": "^1.0.0",
-    "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.8",
-    "webpack-dev-server": "^3.8.0"
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   }
 }

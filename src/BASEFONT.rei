@@ -1,6 +1,5 @@
 let defaultFontSize: int;
 let getFontSize: int => string;
-[@bs.deriving abstract]
 type font = {
   color: option(string),
   face: option(string),
@@ -10,7 +9,7 @@ let makeFontStyle:
   (
     ~color: option(string),
     ~face: option(string),
-    ~size: option(Js.String.t),
+    ~size: option(string),
     font
   ) =>
   ReactDOMRe.style;
@@ -32,30 +31,12 @@ module Provider: {
     });
 };
 let useContext: unit => font;
-[@bs.obj]
-external makeProps:
-  (
-    ~color: 'color=?,
-    ~face: 'face=?,
-    ~size: 'size=?,
-    ~children: 'children,
-    ~key: string=?,
-    unit
-  ) =>
-  {
-    .
-    "children": 'children,
-    "color": option('color),
-    "face": option('face),
-    "size": option('size),
-  } =
-  "";
+[@react.component]
 let make:
-  {
-    .
-    "children": ReasonReact.reactElement,
-    "color": option(string),
-    "face": option(string),
-    "size": option(int),
-  } =>
+  (
+    ~color: string=?,
+    ~face: string=?,
+    ~size: int=?,
+    ~children: React.element
+  ) =>
   React.element;

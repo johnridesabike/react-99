@@ -77,3 +77,7 @@ npm run webpack:production
 This will replace the development artifact `docs/Index.js` for an optimized
 version as well as copy `src/exampe/index.html` into `docs/`. You can then
 deploy the contents of the `docs` directory (`index.html` and `Index.js`).
+
+## Changelog
+
+- **1.1.0**: Updated dependencies, including an upgrade to BuckleScript 7.

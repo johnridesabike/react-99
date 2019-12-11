@@ -1,27 +1,9 @@
-[@bs.obj]
-external makeProps:
-  (
-    ~color: 'color=?,
-    ~face: 'face=?,
-    ~size: 'size=?,
-    ~children: 'children,
-    ~key: string=?,
-    unit
-  ) =>
-  {
-    .
-    "children": 'children,
-    "color": option('color),
-    "face": option('face),
-    "size": option('size),
-  } =
-  "";
+[@react.component]
 let make:
-  {
-    .
-    "children": ReasonReact.reactElement,
-    "color": option(string),
-    "face": option(string),
-    "size": option(Js.String.t),
-  } =>
-  ReasonReact.reactElement;
+  (
+    ~color: string=?,
+    ~face: string=?,
+    ~size: string=?,
+    ~children: React.element
+  ) =>
+  React.element;

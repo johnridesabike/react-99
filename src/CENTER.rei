@@ -1,6 +1,2 @@
-[@bs.obj]
-external makeProps:
-  (~children: 'children, ~key: string=?, unit) => {. "children": 'children} =
-  "";
-let make:
-  {. "children": ReasonReact.reactElement} => ReasonReact.reactElement;
+[@react.component]
+let make: (~children: React.element) => React.element;

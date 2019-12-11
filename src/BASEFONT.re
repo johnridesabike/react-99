@@ -1,4 +1,4 @@
-module M = Belt.Map.Int;
+module M = Map.Int;
 /* Here's the font stuff, which is surprisingly complicated. */
 /* Source: Safari's web inspector. */
 let defaultFontSize = 3;
@@ -26,7 +26,7 @@ let parseSize = (size, baseFontSize) => {
     | _ => int_of_string(size)
     };
   let (maxIndex, maxValue) =
-    M.maximum(fontSizes)->Belt.Option.getWithDefault((7, "48px"));
+    M.maximum(fontSizes)->Option.getWithDefault((7, "48px"));
   switch (M.get(fontSizes, sizeIndex)) {
   | None when sizeIndex > maxIndex => maxValue
   | None => getFontSize(1)
@@ -34,32 +34,31 @@ let parseSize = (size, baseFontSize) => {
   };
 };
 
-[@bs.deriving abstract]
 type font = {
   color: option(string),
   face: option(string),
   size: option(int),
 };
-let emptyFont = font(~color=None, ~face=None, ~size=None);
+let emptyFont = {color: None, face: None, size: None};
 
 let makeFontStyle = (~color, ~face, ~size, defaultProps) => {
   module Style = ReactDOMRe.Style;
   let colorStyle =
-    switch (color, defaultProps |> colorGet) {
+    switch (color, defaultProps.color) {
     | (None, None) => Style.make()
     | (Some(color), Some(_))
     | (None, Some(color))
     | (Some(color), None) => Style.make(~color, ())
     };
   let faceStyle =
-    switch (face, defaultProps |> faceGet) {
+    switch (face, defaultProps.face) {
     | (None, None) => Style.make()
     | (Some(face), None)
     | (Some(face), Some(_))
     | (None, Some(face)) => Style.make(~fontFamily=face, ())
     };
   let sizeStyle =
-    switch (size, defaultProps |> sizeGet) {
+    switch (size, defaultProps.size) {
     | (None, None) => Style.make()
     | (None, Some(size)) => Style.make(~fontSize=getFontSize(size), ())
     | (Some(size), None) =>
@@ -83,13 +82,13 @@ let useContext = () => {
 };
 [@react.component]
 let make = (~color=?, ~face=?, ~size=?, ~children) => {
-  let value = font(~color, ~face, ~size);
+  let value = {color, face, size};
   <Provider value>
     <div
       style={makeFontStyle(
         ~color,
         ~face,
-        ~size=Belt.Option.map(size, string_of_int),
+        ~size=Option.map(size, string_of_int),
         emptyFont,
       )}>
       children
