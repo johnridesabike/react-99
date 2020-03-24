@@ -9,7 +9,7 @@ function FONT(Props) {
   var size = Props.size;
   var children = Props.children;
   return React.createElement("span", {
-              style: BASEFONT$React99.makeFontStyle(color, face, size, BASEFONT$React99.useContext(/* () */0))
+              style: BASEFONT$React99.Font.makeStyle(BASEFONT$React99.useContext(/* () */0), color, face, size)
             }, children);
 }
 

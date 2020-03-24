@@ -4,17 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <title>React '99</title>
-  <script>
-    function displayReason(isReason) {
-      if (isReason) {
-        document.body.classList.add("show-reason");
-        document.body.classList.remove("show-javascript");
-      } else {
-        document.body.classList.remove("show-reason");
-        document.body.classList.add("show-javascript");
-      }
-    }
-  </script>
 </head>
 
 <body class="show-reason">
@@ -42,10 +31,10 @@
     <section>
       <h1>Example code</h1>
       <p><small>Choose your language:</small></p>
-      <button onclick="displayReason(true)" class="reason-button">
+      <button id="reason-button" class="reason-button">
         <img src="reason.png" alt="Reason" class="reason-button__img">
       </button>
-      <button onclick="displayReason(false)" class="javascript-button">
+      <button id="javascript-button" class="javascript-button">
         <img src="javascript.png" alt="JavaScript" class="javascript-button__img">
       </button>
       <p>
@@ -190,10 +179,29 @@ const MindBlowingEffect = () =&gt;
       <img src="open_source.gif" alt="open source">
     </a>
     <p class="copyright">
-      Copyright &copy; 2019 <a href="https://johnridesa.bike">John Jackson</a>
+      Copyright &copy; 2020 <a href="https://johnridesa.bike">John Jackson</a>
     </p>
-    <script src="index.js"></script>
   </footer>
+  <script>
+    function displayReason() {
+      document.body.classList.add("show-reason");
+      document.body.classList.remove("show-javascript");
+    }
+
+    function displayJavaScript() {
+      document.body.classList.remove("show-reason");
+      document.body.classList.add("show-javascript");
+    }
+    
+    document
+      .getElementById("reason-button")
+      .addEventListener("click", displayReason);
+
+    document
+      .getElementById("javascript-button")
+      .addEventListener("click", displayJavaScript);
+  </script>
+  <script src="Index.bs.js"></script>
 </body>
 
 </html>

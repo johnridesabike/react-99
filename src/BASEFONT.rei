@@ -1,20 +1,41 @@
-let defaultFontSize: int;
-let getFontSize: int => string;
-type font = {
-  color: option(string),
-  face: option(string),
-  size: option(int),
+module Size: {
+  type t =
+    | One
+    | Two
+    | Three
+    | Four
+    | Five
+    | Six
+    | Seven;
+
+  let default: t;
+
+  let fromInt: int => t;
+
+  let parseString: (string, ~base: t) => string;
 };
-let makeFontStyle:
-  (
-    ~color: option(string),
-    ~face: option(string),
-    ~size: option(string),
-    font
-  ) =>
-  ReactDOMRe.style;
-let emptyFont: font;
-let context: React.Context.t(font);
+
+module Font: {
+  type t = {
+    color: option(string),
+    face: option(string),
+    size: option(int),
+  };
+
+  let makeStyle:
+    (
+      t,
+      ~color: option(string),
+      ~face: option(string),
+      ~size: option(string)
+    ) =>
+    ReactDOMRe.style;
+
+  let empty: t;
+};
+
+let context: React.Context.t(Font.t);
+
 module Provider: {
   let makeProps:
     (~value: 'a, ~children: 'b, unit) =>
@@ -27,10 +48,12 @@ module Provider: {
     React.component({
       .
       "children": React.element,
-      "value": font,
+      "value": Font.t,
     });
 };
-let useContext: unit => font;
+
+let useContext: unit => Font.t;
+
 [@react.component]
 let make:
   (

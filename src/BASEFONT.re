@@ -1,75 +1,119 @@
-module M = Map.Int;
 /* Here's the font stuff, which is surprisingly complicated. */
 /* Source: Safari's web inspector. */
-let defaultFontSize = 3;
-let fontSizes =
-  M.fromArray([|
-    (1, "10px"),
-    (2, "13px"),
-    (3, "16px"),
-    (4, "18px"),
-    (5, "24px"),
-    (6, "32px"),
-    (7, "48px"),
-  |]);
-let getFontSize = size =>
-  switch (M.get(fontSizes, size)) {
-  | Some(size) => size
-  | None when size <= 0 => "10px"
-  | None => "48px"
-  };
-let parseSize = (size, baseFontSize) => {
-  let sizeIndex =
-    switch (size |> Js.String.charAt(0)) {
+
+module Size = {
+  type t =
+    | One
+    | Two
+    | Three
+    | Four
+    | Five
+    | Six
+    | Seven;
+
+  let default = Three;
+
+  let fromInt =
+    fun
+    | 1 => One
+    | 2 => Two
+    | 3 => Three
+    | 4 => Four
+    | 5 => Five
+    | 6 => Six
+    | 7 => Seven
+    | x when x < 1 => One
+    | _ => Seven;
+
+  let fromString =
+    fun
+    | "1" => One
+    | "2" => Two
+    | "3" => Three
+    | "4" => Four
+    | "5" => Five
+    | "6" => Six
+    | "7" => Seven
+    | x =>
+      switch (Belt.Int.fromString(x)) {
+      | Some(x) when x < 1 => One
+      | Some(_) => Seven
+      | None => default
+      };
+
+  let toInt =
+    fun
+    | One => 1
+    | Two => 2
+    | Three => 3
+    | Four => 4
+    | Five => 5
+    | Six => 6
+    | Seven => 7;
+
+  let toPx =
+    fun
+    | One => "10px"
+    | Two => "13px"
+    | Three => "16px"
+    | Four => "18px"
+    | Five => "24px"
+    | Six => "32px"
+    | Seven => "48px";
+
+  let add = (a, b) => toInt(a) + toInt(b) |> fromInt;
+
+  let parseString = (size, ~base) => {
+    switch (Js.String2.charAt(size, 0)) {
     | "+"
-    | "-" => int_of_string(size) + baseFontSize
-    | _ => int_of_string(size)
+    | "-" => add(fromString(size), base)->toPx
+    | _ => size->fromString->toPx
     };
-  let (maxIndex, maxValue) =
-    M.maximum(fontSizes)->Option.getWithDefault((7, "48px"));
-  switch (M.get(fontSizes, sizeIndex)) {
-  | None when sizeIndex > maxIndex => maxValue
-  | None => getFontSize(1)
-  | Some(size) => size
   };
 };
 
-type font = {
-  color: option(string),
-  face: option(string),
-  size: option(int),
-};
-let emptyFont = {color: None, face: None, size: None};
+module Font = {
+  type t = {
+    color: option(string),
+    face: option(string),
+    size: option(int),
+  };
+  let empty = {color: None, face: None, size: None};
 
-let makeFontStyle = (~color, ~face, ~size, defaultProps) => {
-  module Style = ReactDOMRe.Style;
-  let colorStyle =
-    switch (color, defaultProps.color) {
-    | (None, None) => Style.make()
-    | (Some(color), Some(_))
-    | (None, Some(color))
-    | (Some(color), None) => Style.make(~color, ())
-    };
-  let faceStyle =
-    switch (face, defaultProps.face) {
-    | (None, None) => Style.make()
-    | (Some(face), None)
-    | (Some(face), Some(_))
-    | (None, Some(face)) => Style.make(~fontFamily=face, ())
-    };
-  let sizeStyle =
-    switch (size, defaultProps.size) {
-    | (None, None) => Style.make()
-    | (None, Some(size)) => Style.make(~fontSize=getFontSize(size), ())
-    | (Some(size), None) =>
-      Style.make(~fontSize=parseSize(size, defaultFontSize), ())
-    | (Some(size), Some(defaultSize)) =>
-      Style.make(~fontSize=parseSize(size, defaultSize), ())
-    };
-  colorStyle->Style.combine(faceStyle)->Style.combine(sizeStyle);
+  let makeStyle = (defaultProps, ~color, ~face, ~size) => {
+    module Style = ReactDOMRe.Style;
+    let colorStyle =
+      switch (color, defaultProps.color) {
+      | (None, None) => Style.make()
+      | (Some(color), Some(_))
+      | (None, Some(color))
+      | (Some(color), None) => Style.make(~color, ())
+      };
+    let faceStyle =
+      switch (face, defaultProps.face) {
+      | (None, None) => Style.make()
+      | (Some(face), None)
+      | (Some(face), Some(_))
+      | (None, Some(face)) => Style.make(~fontFamily=face, ())
+      };
+    let sizeStyle =
+      switch (size, defaultProps.size) {
+      | (None, None) => Style.make()
+      | (None, Some(size)) =>
+        Style.make(~fontSize=size->Size.fromInt->Size.toPx, ())
+      | (Some(size), None) =>
+        Style.make(~fontSize=Size.parseString(size, ~base=Size.default), ())
+      | (Some(size), Some(defaultSize)) =>
+        Style.make(
+          ~fontSize=Size.parseString(size, ~base=Size.fromInt(defaultSize)),
+          (),
+        )
+      };
+    colorStyle->Style.combine(faceStyle)->Style.combine(sizeStyle);
+  };
 };
 
-let context = React.createContext(emptyFont);
+let context = React.createContext(Font.empty);
 module Provider = {
   let makeProps = (~value, ~children, ()) => {
     "value": value,
@@ -82,14 +126,14 @@ let useContext = () => {
 };
 [@react.component]
 let make = (~color=?, ~face=?, ~size=?, ~children) => {
-  let value = {color, face, size};
+  let value = Font.{color, face, size};
   <Provider value>
     <div
-      style={makeFontStyle(
+      style={Font.makeStyle(
         ~color,
         ~face,
         ~size=Option.map(size, string_of_int),
-        emptyFont,
+        Font.empty,
       )}>
       children
     </div>

@@ -8,6 +8,7 @@ var style = document.createElement('style');
 document.head.appendChild(style);
 style.type = 'text/css';
 style.appendChild(document.createTextNode(blinkCss))|};
+
 [@react.component]
 let make = (~children) => {
   <div

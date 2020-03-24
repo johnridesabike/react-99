@@ -1,60 +1,6 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
-<head>
-  <meta charset="UTF-8">
-  <title>React '99</title>
-  <script>
-    function displayReason(isReason) {
-      if (isReason) {
-        document.body.classList.add("show-reason");
-        document.body.classList.remove("show-javascript");
-      } else {
-        document.body.classList.remove("show-reason");
-        document.body.classList.add("show-javascript");
-      }
-    }
-  </script>
-</head>
-
-<body class="show-reason">
-  <header>
-    <h1><img src="34cae49cede9a1f7e9ce6577f19f9e93.png" alt="React '99"></h1>
-    <p>
-      Use <a href="https://reasonml.github.io">Reason</a> and
-      <a href="https://reasonml.github.io/reason-react/">React 2077</a> to
-      invoke the HTML of 1999.
-    </p>
-  </header>
-  <main>
-    <section>
-      <h2>Installation</h2>
-      <p>Run this command:</p>
-      <pre><code class="language-shell-session">npm i react-99</code></pre>
-      <p>
-        If you're using Reason, then add it to your <code>bs-dependencies</code>
-        in your <code>bsconfig.json</code> file:
-      </p>
-      <pre><code class="language-json">"bs-dependencies": [
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><title>React '99</title><link rel="stylesheet" href="Index.bs.9bf0b96f.css"></head><body class="show-reason"> <header> <h1><img src="header.3e606f7e.png" alt="React '99"></h1> <p> Use <a href="https://reasonml.github.io">Reason</a> and <a href="https://reasonml.github.io/reason-react/">React 2077</a> to invoke the HTML of 1999. </p> </header> <main> <section> <h2>Installation</h2> <p>Run this command:</p> <pre><code class="language-shell-session">npm i react-99</code></pre> <p> If you're using Reason, then add it to your <code>bs-dependencies</code> in your <code>bsconfig.json</code> file: </p> <pre><code class="language-json">"bs-dependencies": [
   "react-99" 
-]</code></pre>
-    </section>
-    <section>
-      <h1>Example code</h1>
-      <p><small>Choose your language:</small></p>
-      <button onclick="displayReason(true)" class="reason-button">
-        <img src="f6b5676e4a0319c5dff5eb4fd3a499d3.png" alt="Reason" class="reason-button__img">
-      </button>
-      <button onclick="displayReason(false)" class="javascript-button">
-        <img src="27e5165ab43b715d96cdd9e2b4fb91a1.png" alt="JavaScript" class="javascript-button__img">
-      </button>
-      <p>
-        Tired of modern styling code? Miss setting font size with
-        <code>&lt;FONT&gt;</code>? How about ye olde <code>&lt;BLINK&gt;</code>
-        tag?
-      </p>
-      <div id="reasonExample1"></div>
-      <pre><code class="language-reason">open React99;
+]</code></pre> </section> <section> <h1>Example code</h1> <p><small>Choose your language:</small></p> <button id="reason-button" class="reason-button"> <img src="reason.2c748e44.png" alt="Reason" class="reason-button__img"> </button> <button id="javascript-button" class="javascript-button"> <img src="javascript.d4d763e0.png" alt="JavaScript" class="javascript-button__img"> </button> <p> Tired of modern styling code? Miss setting font size with <code>&lt;FONT&gt;</code>? How about ye olde <code>&lt;BLINK&gt;</code> tag? </p> <div id="reasonExample1"></div> <pre><code class="language-reason">open React99;
 module SuperCoolHeader = {
   [@react.component]
   let make = () =&gt;
@@ -65,8 +11,7 @@ module SuperCoolHeader = {
         &lt;/FONT&gt;
       &lt;/BLINK&gt;
     &lt;/CENTER&gt;;
-};</code></pre>
-      <pre><code class="language-javascript">import {BLINK, CENTER, FONT} from "react-99";
+};</code></pre> <pre><code class="language-javascript">import {BLINK, CENTER, FONT} from "react-99";
 const SuperCoolHeader = () =&gt;
   &lt;CENTER&gt;
     &lt;BLINK&gt;
@@ -74,13 +19,7 @@ const SuperCoolHeader = () =&gt;
         Get up and slam!
       &lt;/FONT&gt;
     &lt;/BLINK&gt;
-  &lt;/CENTER&gt;;</code></pre>
-      <p>
-        <code>&lt;BASEFONT&gt;</code> can be used to set the default font size
-        inherited by children <code>&lt;FONT&gt;</code> tags.
-      </p>
-      <div id="reasonExample2"></div>
-      <pre><code class="language-reason">open React99;
+  &lt;/CENTER&gt;;</code></pre> <p> <code>&lt;BASEFONT&gt;</code> can be used to set the default font size inherited by children <code>&lt;FONT&gt;</code> tags. </p> <div id="reasonExample2"></div> <pre><code class="language-reason">open React99;
 module MindBlowingEffect = {
   [@react.component]
   let make = () =&gt;
@@ -92,8 +31,7 @@ module MindBlowingEffect = {
         &lt;/marquee&gt;
       &lt;/CENTER&gt;
     &lt;/BASEFONT&gt;;
-};</code></pre>
-      <pre><code class="language-javascript">import {CENTER, BASEFONT, FONT} from "react-99";
+};</code></pre> <pre><code class="language-javascript">import {CENTER, BASEFONT, FONT} from "react-99";
 const MindBlowingEffect = () =&gt;
   &lt;BASEFONT color=&quot;aqua&quot; size={5} face=&quot;comic sans ms&quot;&gt;
     &lt;CENTER&gt;
@@ -101,99 +39,5 @@ const MindBlowingEffect = () =&gt;
         And welcome to the &lt;FONT size=&quot;+1&quot;&gt;Jam.&lt;/FONT&gt;
       &lt;/marquee&gt;
     &lt;/CENTER&gt;
-  &lt;/BASEFONT&gt;;</code></pre>
-    </section>
-    <section>
-      <h1>API reference</h1>
-      <h2><code>&lt;CENTER&gt;</code></h2>
-      <p>Centers the text of its children.</p>
-      <h2><code>&lt;BLINK&gt;</code></h2>
-      <p>Gives the text a "blink" effect.</p>
-      <h2><code>&lt;BASEFONT&gt;</code></h2>
-      <p>
-        Sets the default font for its children. The <code>size</code> prop can
-        be an integer from 1 to 7.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Prop</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>children</td>
-            <td>reactElement</td>
-          </tr>
-          <tr>
-            <td>color</td>
-            <td>option(string)</td>
-          </tr>
-          <tr>
-            <td>face</td>
-            <td>option(string)</td>
-          </tr>
-          <tr>
-            <td>size</td>
-            <td>option(int)</td>
-          </tr>
-        </tbody>
-      </table>
-      <h2><code>&lt;FONT&gt;</code></h2>
-      <p>
-        Sets the font for its children. The <code>size</code> prop is a
-        <em>string</em> of an integer. It can begin with a "+" or a "-" to
-        add or subtract the number from the <code>BASEFONT</code> defaults.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Prop</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>children</td>
-            <td>reactElement</td>
-          </tr>
-          <tr>
-            <td>color</td>
-            <td>option(string)</td>
-          </tr>
-          <tr>
-            <td>face</td>
-            <td>option(string)</td>
-          </tr>
-          <tr>
-            <td>size</td>
-            <td>option(string)</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    <section>
-      <h1>Notes</h1>
-      <p>
-        React '99 is made with ReasonReact, but it's probably usable by regular
-        ReactJS too. It requires the <code>bs-platform</code> and
-        <code>reason-react</code> modules, which it lists as peer dependencies.
-        You'll need to install those to use it.
-      </p>
-      <p>I don't test JavaScript, so use at your own risk.</p>
-      <p>The default font size is 3, which is equivilant to 16px.</p>
-    </section>
-  </main>
-  <footer>
-    <a href="https://github.com/johnridesabike/react-99">
-      <img src="845c7e239bf0004faf74c9a75b049e07.gif" alt="open source">
-    </a>
-    <p class="copyright">
-      Copyright &copy; 2019 <a href="https://johnridesa.bike">John Jackson</a>
-    </p>
-    <script src="index.js"></script>
-  </footer>
-</body>
-
-</html>
+  &lt;/BASEFONT&gt;;</code></pre> </section> <section> <h1>API reference</h1> <h2><code>&lt;CENTER&gt;</code></h2> <p>Centers the text of its children.</p> <h2><code>&lt;BLINK&gt;</code></h2> <p>Gives the text a "blink" effect.</p> <h2><code>&lt;BASEFONT&gt;</code></h2> <p> Sets the default font for its children. The <code>size</code> prop can be an integer from 1 to 7. </p> <table> <thead> <tr> <th>Prop</th> <th>Type</th> </tr> </thead> <tbody> <tr> <td>children</td> <td>reactElement</td> </tr> <tr> <td>color</td> <td>option(string)</td> </tr> <tr> <td>face</td> <td>option(string)</td> </tr> <tr> <td>size</td> <td>option(int)</td> </tr> </tbody> </table> <h2><code>&lt;FONT&gt;</code></h2> <p> Sets the font for its children. The <code>size</code> prop is a <em>string</em> of an integer. It can begin with a "+" or a "-" to add or subtract the number from the <code>BASEFONT</code> defaults. </p> <table> <thead> <tr> <th>Prop</th> <th>Type</th> </tr> </thead> <tbody> <tr> <td>children</td> <td>reactElement</td> </tr> <tr> <td>color</td> <td>option(string)</td> </tr> <tr> <td>face</td> <td>option(string)</td> </tr> <tr> <td>size</td> <td>option(string)</td> </tr> </tbody> </table> </section> <section> <h1>Notes</h1> <p> React '99 is made with ReasonReact, but it's probably usable by regular ReactJS too. It requires the <code>bs-platform</code> and <code>reason-react</code> modules, which it lists as peer dependencies. You'll need to install those to use it. </p> <p>I don't test JavaScript, so use at your own risk.</p> <p>The default font size is 3, which is equivilant to 16px.</p> </section> </main> <footer> <a href="https://github.com/johnridesabike/react-99"> <img src="open_source.2025c959.gif" alt="open source"> </a> <p class="copyright"> Copyright &copy; 2020 <a href="https://johnridesa.bike">John Jackson</a> </p> </footer> <script>function t(){document.body.classList.add("show-reason"),document.body.classList.remove("show-javascript")}function e(){document.body.classList.remove("show-reason"),document.body.classList.add("show-javascript")}document.getElementById("reason-button").addEventListener("click",t),document.getElementById("javascript-button").addEventListener("click",e);</script> <script src="Index.bs.7da41884.js"></script>
+</body></html>
